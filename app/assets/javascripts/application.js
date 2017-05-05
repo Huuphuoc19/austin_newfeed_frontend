@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require rails_emoji_picker
 //= require jquery_ujs
 //= require turbolinks
 //= require modernizr-2.6.2.min.js
