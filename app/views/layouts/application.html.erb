@@ -1,16 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7">
-  <![endif]-->
-  <!--[if IE 7]>
-  <html class="no-js lt-ie9 lt-ie8">
-    <![endif]-->
-
-    <html class="no-js lt-ie9">
-      <![endif]-->
-      <!--[if gt IE 8]><!-->
-      <html class="no-js">
-        <!--<![endif]-->
+    <html>
         <head>
           <meta charset="utf-8">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,26 +7,17 @@
           <meta name="description" content="">
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <%= csrf_meta_tags %>
-
           <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
           <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
           <!-- Latest compiled and minified CSS -->
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
           <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-          <!-- jQuery library -->
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
           <!-- Latest compiled JavaScript -->
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
           <!-- Favicon -->
           <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 
-
-          <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-          <!--[if lt IE 9]>
-          <script src="assets/js/vendor/html5shiv.js"></script>
-          <script <s></s>rc="assets/js/vendor/respond.min.js"></script>
-          <![endif]-->
         </head>
         <body>
           <section id="main-wrapper" class="theme-default">
@@ -133,7 +113,9 @@
                     <section class="panel  timeline-post-to">
                       <div class="panel-body">
                         <form role="form">
-                          <textarea class="form-control" placeholder="What's on your mind?"></textarea>
+                          <!-- <p class="emoji-picker-container"> -->
+                            <textarea class="form-control" placeholder="What's on your mind?" ></textarea>
+                          <!-- </p> -->
                           <div class="row">
                             <div class="col-sm-6">
                               <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
