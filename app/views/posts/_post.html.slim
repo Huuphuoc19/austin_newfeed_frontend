@@ -1,0 +1,6 @@
+li id="post##{post.id}"
+  .date
+    span = post.decorate.days_created
+    span.small = post.decorate.month_created
+  h4 = post.title
+  p = content_with_emoji(post.content).html_safe

@@ -1,9 +1,8 @@
 section.panel.timeline-post-to
   .panel-body
-    form role="form"
-      /! <p class="emoji-picker-container"
-      textarea.form-control placeholder=("What's on your mind?")
-      /! </p
+    = form_for @post, remote: true do |f|
+      .emoji-picker-container.form-group#new-post-form
+        = f.text_area :content, class: 'form-control',id:'post-content', placeholder: "What's on your mind ?", data: { emojiable: true }
       .row
         .col-sm-6
           a.btn.btn-sm.btn-default
@@ -15,4 +14,5 @@ section.panel.timeline-post-to
           a.btn.btn-sm.btn-default
             i.fa.fa-map-marker
         .col-sm-6.text-right
-          button.btn.btn-primary type="submit"  Post
+          = f.button :Post, class: 'button btn btn-primary'
+

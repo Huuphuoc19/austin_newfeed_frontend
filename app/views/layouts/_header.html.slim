@@ -1,7 +1,7 @@
 header#header
   /! logo start
   .brand
-    a.logo href="index.html"
+    = link_to root_path, class: 'logo'
       i.icon-layers
       span NEU
       | BOARD
@@ -22,8 +22,10 @@ header#header
       a.dropdown-toggle data-toggle="dropdown" href="javascript:void(0);"
         span.meta
           span.avatar
-            img.img-circle alt="" src="assets/img/profile.jpg" /
-          span.text Mike Adams
+            -if current_user
+              = gravatar_image_tag(current_user.email .gsub('spam', 'mdeering'), alt: current_user.first_name, class:'img-circle', gravatar: { size: '45px' })
+          - if current_user
+            span.text = "#{current_user.first_name} #{current_user.last_name}"
           span.caret
       ul.dropdown-menu.animated.fadeInRight role="menu"
         li
@@ -51,7 +53,7 @@ header#header
             | Settings
         li.divider
         li
-          a href="javascript:void(0);"
+          = link_to destroy_user_session_path, method: :delete
             span.icon
               i.fa.fa-sign-out
             | Logout

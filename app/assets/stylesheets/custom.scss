@@ -35,3 +35,46 @@ a {
 button {
   outline: none !important;
 }
+
+$demi-rose: #f2dede;
+$demi-green: #C1E1F1;
+
+#new-post-form {
+  width: 100%;
+  height: 145px;
+  .form-control {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#m-notice {
+  border-radius: 2px;
+  height: 60px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+
+  z-index: 9999;
+  display: none;
+  p {
+    text-align: center;
+    line-height: 60px;
+    margin: 0px;
+    &.m-notice {
+      background: $demi-green;
+    }
+    &.m-alert {
+      background: $demi-rose;
+    }
+  }
+  span.close-notice {
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #666;
+  }
+}
+

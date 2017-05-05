@@ -3,7 +3,8 @@ html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     = render 'layouts/meta'
-  body
+  body data-turbolinks='false'
+    = render 'shared/errors'
     section#main-wrapper.theme-default
       = render 'layouts/header'
       /! main content start
@@ -15,8 +16,10 @@ html
     /! Config demo
     /! /Config demo
     /! Global JS
+
     = javascript_include_tag 'jquery.fullscreen-min.js', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'jquery.navgoco.min.js', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'switchery.min.js', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'switchery.min.js', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'app.js', 'data-turbolinks-track': 'reload'
+
