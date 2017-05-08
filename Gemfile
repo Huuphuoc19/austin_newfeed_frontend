@@ -50,7 +50,7 @@ gem 'light-service', '~> 0.8.1'
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
-
+gem 'jquery-ui-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

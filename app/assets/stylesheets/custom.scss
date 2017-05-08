@@ -38,6 +38,10 @@ button {
 
 $demi-rose: #f2dede;
 $demi-green: #C1E1F1;
+$gray-1a: #C0C0C0;
+$gray-1b: #808080;
+$gray-1c: #efefef;
+
 
 #new-post-form {
   width: 100%;
@@ -78,3 +82,56 @@ $demi-green: #C1E1F1;
   }
 }
 
+#posts-list {
+  li.main-post {
+    cursor: pointer;
+    text-align: justify;
+    position: relative;
+    .hover-opt {
+      border: 1px solid transparent;
+      position: absolute;
+      right: -32px;
+      top: 0px;
+      height: 100%;
+      font-size: 1.3em;
+      padding: 0px 6px 0px 10px;
+      visibility: hidden;
+      opacity: 0;
+      height: 100%;
+      transition: visibility 0s, opacity 0.5s linear;
+      ul {
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        li {
+          padding: 0px;
+          margin: 0px;
+          a {
+            color: $gray-1a;
+            &:hover {
+              color: $gray-1b;
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      .hover-opt {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes example {
+    from {background-color: $gray-1a;}
+    to {background-color: $gray-1c;}
+}
+
+/* The element to apply the animation to */
+.new-post-el {
+    background-color: red;
+    animation-name: example;
+    animation-duration: 3.5s;
+}

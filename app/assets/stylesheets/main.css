@@ -2920,7 +2920,7 @@ label.valid {
   margin: 0 15px 0 30px;
   border-left: 2px solid #ddd;
 }
-.timeline-post ul li {
+.timeline-post ul li.main-post {
   padding: 5px 15px;
   display: block;
   min-height: 54px;
@@ -2931,7 +2931,7 @@ label.valid {
   position: relative;
   border-left: 4px solid transparent;
 }
-.timeline-post ul li:before {
+.timeline-post ul li.main-post:before {
   width: 10px;
   height: 10px;
   border-style: solid;

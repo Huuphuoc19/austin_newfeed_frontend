@@ -6,10 +6,11 @@ User.create({
   })
 
 
-1000.times do |n|
+100.times do |n|
+  date = 100.days.ago + (n + 1).days
   Post.create({
-    title: Faker::Lorem.sentence,
     content: Faker::Lorem.paragraphs,
-    user_id: User.find_by_email('phanphuocdt@gmail.com').id
+    user_id: User.find_by_email('phanphuocdt@gmail.com').id,
+    created_at: date
   })
 end

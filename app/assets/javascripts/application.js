@@ -11,9 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require rails_emoji_picker
 //= require jquery_ujs
 //= require turbolinks
+//= require style
+//= require post
 //= require scroll
 //= require modernizr-2.6.2.min.js
 //= require_tree .
