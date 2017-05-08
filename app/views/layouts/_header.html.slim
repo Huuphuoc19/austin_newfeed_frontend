@@ -23,7 +23,7 @@ header#header
         span.meta
           span.avatar
             -if current_user
-              = gravatar_image_tag(current_user.email .gsub('spam', 'mdeering'), alt: current_user.first_name, class:'img-circle', gravatar: { size: '45px' })
+              = gravatar_image_tag(current_user.email .gsub('spam', 'mdeering'), alt: current_user.first_name, class:'img-circle', gravatar: { size: '40px' })
           - if current_user
             span.text = "#{current_user.first_name} #{current_user.last_name}"
           span.caret

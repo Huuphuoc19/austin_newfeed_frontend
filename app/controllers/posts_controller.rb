@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @posts = Post.limit(30)
+    @posts = Post.limit(10)
     @post = Post.new
   end
 
@@ -12,6 +12,16 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html
       format.js
+    end
+  end
+
+  def more
+    last_id = params[:id]
+    @posts = Post.more_post(last_id, 30)
+    json_text = { :name => 'Mike', :age => 70 }.to_json
+    respond_to do |format|
+      format.html
+      render json: @posts
     end
   end
 
