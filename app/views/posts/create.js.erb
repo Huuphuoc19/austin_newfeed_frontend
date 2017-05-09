@@ -8,7 +8,7 @@
   $('#new-post-form #post-content').val('');
   $('#new-post-form .form-control').html('');
 
-  var el = document.getElementById('post#' + <%= @post.id %>);
+  var el = document.getElementById('post-' + <%= @post.id %>);
   el.classList.add('new-post-el');
 <% else %>
   var notice = $('#m-notice');

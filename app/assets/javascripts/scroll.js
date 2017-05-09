@@ -14,7 +14,7 @@ $(document).ready(function(){
     var li = document.createElement('li');
     li.setAttribute('class','main-post');
     li.setAttribute('data-id', data['id']);
-    li.setAttribute('id', 'post#' + data['id']);
+    li.setAttribute('id', 'post-' + data['id']);
     var divEl = document.createElement('div');
     var hoverEL = document.createElement('div');
     var ulEl = document.createElement('ul');
@@ -59,6 +59,7 @@ $(document).ready(function(){
     span2El.setAttribute('class', 'small');
     span2El.innerHTML = monthNames[createdAt.getMonth()];
     h4El.innerHTML = data['title'];
+    pEl.setAttribute('class', 'content-p');
     pEl.innerHTML = data['content'];
 
     // append

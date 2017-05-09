@@ -17,6 +17,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      @flag = true
+    else
+      @flag = false
+    end
+  end
+
   def more
     last_id = params[:id]
     @posts = Post.more_post(last_id, 20)
@@ -43,6 +52,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:content)
   end
 end
