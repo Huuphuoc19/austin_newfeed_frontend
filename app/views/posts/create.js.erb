@@ -1,0 +1,21 @@
+<% if @post.save %>
+  var postsList = $('#posts-list');
+  var element = '<%= escape_javascript( render partial: "post", object: @post )%>'
+
+  postsList.prepend(element);
+
+  // reset form
+  $('#new-post-form #post-content').val('');
+  $('#new-post-form .form-control').html('');
+
+  var el = document.getElementById('post-' + <%= @post.id %>);
+  el.classList.add('new-post-el');
+<% else %>
+  var notice = $('#m-notice');
+  $('#m-notice .m-alert').html('Post is empty !!!');
+  notice.slideDown();
+  setTimeout(function(e) {
+   notice.hide();
+  },2000);
+
+<% end %>

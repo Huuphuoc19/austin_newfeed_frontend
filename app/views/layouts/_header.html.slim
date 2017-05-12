@@ -1,0 +1,65 @@
+header#header
+  /! logo start
+  .brand
+    = link_to root_path, class: 'logo'
+      i.icon-layers
+      span NEU
+      | BOARD
+  /! logo end
+  ul.nav.navbar-nav.navbar-left
+    li.toggle-navigation.toggle-left
+      button#toggle-left.sidebar-toggle
+        i.fa.fa-bars
+    li.toggle-profile.hidden-xs
+      button#toggle-profile.btn.btn-default type="button"
+        i.icon-user
+    li.hidden-xs.hidden-sm
+      input.search placeholder=("Search project...") type="text" /
+      button.btn.btn-sm.btn-search type="submit"
+        i.fa.fa-search
+  ul.nav.navbar-nav.navbar-right
+    li.dropdown.profile.hidden-xs
+      a.dropdown-toggle data-toggle="dropdown" href="javascript:void(0);"
+        span.meta
+          span.avatar
+            -if current_user
+              = gravatar_image_tag(current_user.email .gsub('spam', 'mdeering'), alt: current_user.first_name, class:'img-circle', gravatar: { size: '40px' })
+          - if current_user
+            span.text = "#{current_user.first_name} #{current_user.last_name}"
+          span.caret
+      ul.dropdown-menu.animated.fadeInRight role="menu"
+        li
+          span.arrow.top
+          h5
+            span 80%
+            small.text-muted Profile complete
+          .progress.progress-xs
+            .progress-bar.progress-bar style=("width: 80%")
+        li.divider
+        li
+          a href="javascript:void(0);"
+            span.icon
+              i.fa.fa-user
+            | My Account
+        li
+          a href="javascript:void(0);"
+            span.icon
+              i.fa.fa-envelope
+            | Messages
+        li
+          a href="javascript:void(0);"
+            span.icon
+              i.fa.fa-cog
+            | Settings
+        li.divider
+        li
+          = link_to destroy_user_session_path, method: :delete
+            span.icon
+              i.fa.fa-sign-out
+            | Logout
+    li.toggle-fullscreen.hidden-xs
+      button#toggle-fullscreen.btn.btn-default.expand type="button"
+        i.fa.fa-expand
+    li.toggle-navigation.toggle-right
+      button#toggle-right.sidebar-toggle
+        i.fa.fa-indent

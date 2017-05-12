@@ -2,24 +2,24 @@
 //
 @font-face {
   font-family: 'Prompt';
-  src: url('Prompt-Regular.eot');
-  src: url('Prompt-Regular.eot?#iefix') format('embedded-opentype'),
-    url('Prompt-Regular.woff2') format('woff2'),
-    url('Prompt-Regular.woff') format('woff'),
-    url('Prompt-Regular.ttf') format('truetype'),
-    url('Prompt-Regular.svg#Prompt-Regular') format('svg');
+  src: font-url('Prompt-Regular.eot');
+  src: font-url('Prompt-Regular.eot?#iefix') format('embedded-opentype'),
+    font-url('Prompt-Regular.woff2') format('woff2'),
+    font-url('Prompt-Regular.woff') format('woff'),
+    font-url('Prompt-Regular.ttf') format('truetype'),
+    font-url('Prompt-Regular.svg#Prompt-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Prompt';
-  src: url('Prompt-Regular_1.eot');
-  src: url('Prompt-Regular_1.eot?#iefix') format('embedded-opentype'),
-    url('Prompt-Regular_1.woff2') format('woff2'),
-    url('Prompt-Regular_1.woff') format('woff'),
-    url('Prompt-Regular_1.ttf') format('truetype'),
-    url('Prompt-Regular_1.svg#Prompt-Regular') format('svg');
+  src: font-url('Prompt-Regular_1.eot');
+  src: font-url('Prompt-Regular_1.eot?#iefix') format('embedded-opentype'),
+    font-url('Prompt-Regular_1.woff2') format('woff2'),
+    font-url('Prompt-Regular_1.woff') format('woff'),
+    font-url('Prompt-Regular_1.ttf') format('truetype'),
+    font-url('Prompt-Regular_1.svg#Prompt-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -34,4 +34,148 @@ a {
 
 button {
   outline: none !important;
+}
+
+$demi-rose: #f2dede;
+$demi-green: #C1E1F1;
+$gray-1a: #C0C0C0;
+$gray-1b: #808080;
+$gray-1c: #efefef;
+
+
+#new-post-form {
+  width: 100%;
+  height: 145px;
+  .form-control {
+    width: 100%;
+    height: 100%;
+  }
+}
+#edit-post-form {
+  width: 100%;
+  .form-control {
+    min-height: 100px;
+  }
+  #edit-post-btn-submit {
+    display: none;
+  }
+}
+
+#m-notice {
+  border-radius: 2px;
+  height: 55px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+
+  z-index: 9999;
+  display: none;
+  p {
+    text-align: center;
+    line-height: 50px;
+    margin: 0px;
+    color: #a8a8a8;
+    &.m-notice {
+      background: $demi-green;
+    }
+    &.m-alert {
+      background: $demi-rose;
+    }
+  }
+  span.close-notice {
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    color: #a8a8a8;
+  }
+}
+
+#posts-list {
+  li.main-post {
+    cursor: pointer;
+    text-align: justify;
+    position: relative;
+    .hover-opt {
+      border: 1px solid transparent;
+      position: absolute;
+      right: -32px;
+      top: 0px;
+      height: 100%;
+      font-size: 1.3em;
+      padding: 0px 6px 0px 10px;
+      visibility: hidden;
+      opacity: 0;
+      height: 100%;
+      transition: visibility 0s, opacity 0.5s linear;
+      ul {
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        li {
+          padding: 0px;
+          margin: 0px;
+          a {
+            color: $gray-1a;
+            &:hover {
+              color: $gray-1b;
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      .hover-opt {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes example {
+    from {background-color: $gray-1a;}
+    to {background-color: $gray-1c;}
+}
+
+/* The element to apply the animation to */
+.new-post-el {
+    background-color: red;
+    animation-name: example;
+    animation-duration: 3.5s;
+}
+
+
+.login {
+  border-radius: 10px;
+  padding: 15px 30px;
+  width: 350px;
+  margin: 80px auto 125px;
+  background: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  form{
+    margin-bottom: 10px;
+    input {
+      font-size: 1.1em;
+    }
+    #error_explanation {
+      border: none;
+      background: none;
+      h2 {
+        display: none;
+      }
+      ul {
+        margin-left: 20px;
+      }
+
+    }
+    .field_with_errors {
+      width: 100%;
+    }
+  }
+}
+
+.signup {
+  margin-top: 10px;
 }

@@ -1,0 +1,14 @@
+<% if @flag %>
+  var postList = document.getElementById('posts-list');
+  var post = $('#post-<%= @post.id %>');
+  post.fadeOut('slow', function(e){
+    postList.removeChild(post[0]);
+  });
+<% else %>
+  var notice = $('#m-notice');
+  $('#m-notice .m-alert').html('Post is empty !!!');
+  notice.slideDown();
+  setTimeout(function(e) {
+   notice.hide();
+  },2000);
+<% end %>

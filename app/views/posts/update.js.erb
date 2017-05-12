@@ -1,0 +1,12 @@
+<% if @flag %>
+  $('#post-<%= @post.id %> .content-p').html('<%= escape_javascript(content_with_emoji(@post.content)) %>');
+  $("#modal-edit-post").modal('hide');
+<% else %>
+  $("#modal-edit-post").modal('hide');
+  var notice = $('#m-notice');
+  $('#m-notice .m-alert').html('Post is empty !!!');
+  notice.slideDown();
+  setTimeout(function(e) {
+   notice.hide();
+  },2000);
+<% end %>

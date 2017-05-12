@@ -1,0 +1,14 @@
+li id="post-#{post.id}" data-id="#{post.id}" class='main-post'
+  div.hover-opt
+    ul
+      li
+        a href='#' class='upt-btn' data-id=post.id
+          i.fa.fa-pencil-square-o
+      li
+        =link_to post, class:'dlt-btn', data: { id: post.id,confirm: 'This post will be deleted permamently' }, remote: true, method: :delete
+          i.fa.fa-trash-o
+  .date
+    span = post.decorate.days_created
+    span.small = post.decorate.month_created
+  h4 = post.title
+  p.content-p = content_with_emoji(post.content).html_safe

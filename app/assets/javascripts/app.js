@@ -1,22 +1,5 @@
 var app = function() {
 
-    $(function() {
-        toggleSettings();
-        switchTheme();
-        navToggleRight();
-        navToggleLeft();
-        navToggleSub();
-        profileToggle();
-        widgetToggle();
-        widgetClose();
-        widgetFlip();
-        tooltips();
-        switcheryToggle();
-        fullscreenWidget();
-        fullscreenMode();
-
-
-    });
 
     var toggleSettings = function() {
         $('.config-link').click(function() {
@@ -407,11 +390,25 @@ var app = function() {
     var fullscreenMode = function() {
        $('#toggle-fullscreen.expand').on('click',function(){
         $(document).toggleFullScreen()
-        $('#toggle-fullscreen .fa').toggleClass('fa-expand fa-compress');  
+        $('#toggle-fullscreen .fa').toggleClass('fa-expand fa-compress');
        });
     };
 
-
+    $(function() {
+        toggleSettings();
+        switchTheme();
+        navToggleRight();
+        navToggleLeft();
+        navToggleSub();
+        profileToggle();
+        widgetToggle();
+        widgetClose();
+        widgetFlip();
+        tooltips();
+        switcheryToggle();
+        fullscreenWidget();
+        fullscreenMode();
+    });
 
     //return functions
     return {

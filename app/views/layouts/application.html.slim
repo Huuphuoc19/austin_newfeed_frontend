@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    = render 'layouts/meta'
+    = yield :script_tag
+  body data-turbolinks='false'
+    = render 'shared/errors'
+    section#main-wrapper.theme-default
+      = render 'layouts/header'
+      /! main content start
+      section.main-content-wrapper
+        section#main-content
+          .row
+            = yield
+      /! main content end
+    /! Config demo
+    /! /Config demo
+    /! Global JS
+
+    = render 'layouts/modal'
+    = javascript_include_tag 'jquery.fullscreen-min.js', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'jquery.navgoco.min.js', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'switchery.min.js', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'switchery.min.js', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'app.js', 'data-turbolinks-track': 'reload'
+

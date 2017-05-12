@@ -1,0 +1,16 @@
+<div class="modal fade" id="modal-edit-post" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        = form_tag '#', id: 'edit_post', method: :patch, remote: true do
+          .emoji-picker-container.form-group#edit-post-form
+            = text_area_tag 'post[content]',nil, class: 'form-control',id:'post-content-edit', placeholder: "What's on your mind ?", data: { emojiable: true }
+            = submit_tag nil, id: 'edit-post-btn-submit'
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id='edit-post-btn' class="button btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div
