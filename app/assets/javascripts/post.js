@@ -29,7 +29,7 @@ $(document).ready(function() {
     }
   };
 
-  // submit by shirt enter
+  // submit new by shirt enter
   var newForm = document.getElementById('new_post');
   newForm.addEventListener("keydown", function(event){
     var key = keyboard.detectKeyboard(event);
@@ -58,8 +58,8 @@ $(document).ready(function() {
   var modal = $("#modal-edit-post");
   var contentEdit = $("#edit_post ");
   $('#posts-list').on('click', 'a.upt-btn', function(e) {
-    modal.modal();
     e.preventDefault();
+    modal.modal();
     var idPost = $(this).attr('data-id');
     var pEl = $("#post-" + idPost + ' .content-p');
     setEditForm('posts/' + idPost, pEl.html());

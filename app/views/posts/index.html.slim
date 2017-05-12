@@ -1,3 +1,6 @@
+= content_for :script_tag
+  = javascript_include_tag 'scroll.js', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'post.js', 'data-turbolinks-track': 'reload'
 .col-md-12
   = render 'form_post'
   section.panel.timeline-post

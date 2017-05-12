@@ -145,3 +145,37 @@ $gray-1c: #efefef;
     animation-name: example;
     animation-duration: 3.5s;
 }
+
+
+.login {
+  border-radius: 10px;
+  padding: 15px 30px;
+  width: 350px;
+  margin: 80px auto 125px;
+  background: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  form{
+    margin-bottom: 10px;
+    input {
+      font-size: 1.1em;
+    }
+    #error_explanation {
+      border: none;
+      background: none;
+      h2 {
+        display: none;
+      }
+      ul {
+        margin-left: 20px;
+      }
+
+    }
+    .field_with_errors {
+      width: 100%;
+    }
+  }
+}
+
+.signup {
+  margin-top: 10px;
+}
